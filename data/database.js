@@ -1,3 +1,6 @@
+//store configuration data, like API keys and database credentials, 
+//in a separate .env file, keeping sensitive information out of the code
+
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -13,7 +16,7 @@ const initDb = (callback) => {
 
   MongoClient.connect(process.env.MONGODB_URL)
     .then((client) => {
-      database = client.db(); // Conecta al cluster, pero elige una DB específica si quieres
+      database = client.db(); 
       callback(null, database);
     })
     .catch((err) => {
