@@ -6,6 +6,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.get('/', (req, res) => {
+    res.send("Project w1-2. To access to more information type in the url /contacts")
+});
 
 app.use('/', require('./routes'));
 
