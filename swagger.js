@@ -5,7 +5,7 @@ const doc = {
         title: 'Mu Api', 
         description: 'usersApi'
     },
-    host: 'https://prject1-vdd5.onrender.com',
+    host: 'prject1-vdd5.onrender.com',
     schemas: ['https'],
 };
 

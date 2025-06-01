@@ -5,7 +5,7 @@
     "description": "usersApi",
     "version": "1.0.0"
   },
-  "host": "https://prject1-vdd5.onrender.com",
+  "host": "prject1-vdd5.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
