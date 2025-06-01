@@ -5,8 +5,8 @@ const doc = {
         title: 'Mu Api', 
         description: 'usersApi'
     },
-    host: 'localhost:3000',
-    schemas: ['http'],
+    host: 'https://prject1-vdd5.onrender.com',
+    schemas: ['https'],
 };
 
 const outputFile = './swagger.json';
