@@ -1,18 +1,31 @@
 const express = require('express');
-
 const mongodb = require('./data/database');
 const app = express();
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
+
+
+//connection
 const port = process.env.PORT || 3000;
 
-app.use(express.json());
+
+//Middleware
+app
+    .use(express.json())
+    .use('/', require('./routes'))
+    .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
+
+//FirstTest
 app.get('/', (req, res) => {
-    res.send("Project w1-2. To access to more information type in the url /contacts")
-});
-
-app.use('/', require('./routes'));
+    res.send("Project w1-2. To access to more information type in the url /contacts")})
 
 
+
+//Ignition of Database connection
 mongodb.initDb((err) => {
     if (err) {
         console.log(err);
@@ -24,6 +37,5 @@ mongodb.initDb((err) => {
     }
 });
 
-//This is listening from web traffic on port 3000
 
 
